@@ -1,0 +1,38 @@
+git status
+
+git init
+
+dotnet new -l
+
+dotnet new gitignore 
+
+// change
+ git remote set-url origin https://github.com/OscarSonnerborg/.NetReactMobxWebShop.git
+
+ //Normal
+git init
+git add README.md
+git commit -m "3rd section"
+git branch -M main
+git remote add origin C:/KurserUdemy/.NetReactReactivities/.NetReactMobxWebShop/.git/
+git push -u origin main
+
+
+//remove origin
+git remote rm origin
+
+
+
+ git remote show origin
+
+>$ git remote rm origin
+
+>$ git add .
+
+>$ git commit -m "First commit"
+
+>$ git remote add origin Copied_origin_url
+
+>$ git remote show origin
+
+>$ git push origin master

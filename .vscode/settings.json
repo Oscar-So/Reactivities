@@ -1,0 +1,6 @@
+{
+    "files.exclude": {
+        "**/Bin": true
+    },
+    "github.gitAuthentication": false
+}

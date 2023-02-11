@@ -1,0 +1,7 @@
+npx create-react-app client-app --use-npm --template typescript - create a react app that is named client app and uses typescript as a template
+
+npm start
+
+npm install axios
+
+npm install semantic-ui-react semantic-ui-css

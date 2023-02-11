@@ -1,0 +1,13 @@
+Microsoft.EntityFrameworkCore.Sqlite // persistence
+
+
+Microsoft.EntityFrameworkCore.Design // api
+
+
+
+
+
+
+dotnet tool install --global dotnet-ef --version 7.0.0
+dotnet ef migrations add InitialCreate -s API -p Persistence
+dotnet watch --no-hot-reload
