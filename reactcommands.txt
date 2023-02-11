@@ -1,4 +1,4 @@
-npx create-react-app client-app --use-npm --template typescript - create a react app that is named client app and uses typescript as a template
+npx create-react-app client-app --use-npm --template typescript 
 
 npm start
 
