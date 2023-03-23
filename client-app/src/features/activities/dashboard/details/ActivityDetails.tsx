@@ -1,33 +1,31 @@
 import { Button, Card, Image } from 'semantic-ui-react';
-import Activity from '../../../../app/models/activity';
+import LoadingComponents from '../../../../app/layout/LoadingComponents';
+import { useStore } from '../../../../app/stores/store';
 
 
-interface Props {
-    activity: Activity
-    cancelSelectActivity: () => void;
-    handleFormOpen : (id : string) => void;
-
-}
 
 
-export default function ActivityDetails({activity,cancelSelectActivity,handleFormOpen}:Props){
-    
 
-        
+export default function ActivityDetails(){
+    const {activityStore} = useStore();
+    const{selectedActivity, openForm, cancelSelectedActivity} = activityStore;
+
+   
+    if (!selectedActivity) return <LoadingComponents/>;    
     return (
         <Card fluid>
-            <Image src={`/assets/categoryImages/${activity.category}.jpg`}/>
+            <Image src={`/assets/categoryImages/${selectedActivity.category}.jpg`}/>
             <Card.Content>
-                <Card.Header>{activity.title}</Card.Header>
+                <Card.Header>{selectedActivity.title}</Card.Header>
                 <Card.Meta>
-                    <span>{activity.date}</span>
+                    <span>{selectedActivity.date}</span>
                 </Card.Meta>
-                <Card.Description>{activity.description}</Card.Description>
+                <Card.Description>{selectedActivity.description}</Card.Description>
             </Card.Content>
             <Card.Content extra>
                 <Button.Group widths='2'>
-                    <Button basic color='blue' content='Edit' onClick={() =>  handleFormOpen(activity.id)}/>
-                    <Button basic color='grey' onClick= {() => cancelSelectActivity() }content='Cancel'/>
+                    <Button basic color='blue' content='Edit' onClick={() =>  activityStore.openForm(selectedActivity.id)}/>
+                    <Button basic color='grey' onClick= {() => activityStore.cancelSelectedActivity()} content='Cancel'/>
                 </Button.Group>
             </Card.Content>
         </Card>
