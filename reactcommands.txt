@@ -11,3 +11,7 @@ npm install uuid
 npm i --save-dev- @types/uuid
 
 npm install react-router-dom
+
+npm install react-calendar
+
+npm install @types/react-calendar
